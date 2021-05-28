@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg">
+   <div class="header__mobile">
+      <input id="open-close" name="open-close" type="checkbox" value=""  />
+      <label for="open-close" class="toggle-button">
+         <span class="open" title="Cerrar" (click)="showDivMobile=!showDivMobile">Cerrar</span>
+         <span class="close" title="Abrir" (click)="!showDivMobile=!showDivMobile">Abrir</span>
+      </label>
+   </div>
+   <div class="header container">
+      <figure>
+         <img src="../../../../assets/svg/logo.svg" alt="Logo">
+      </figure>
+      <ul>
+         <li class="header--items--active" (click)="showDiv=!showDiv">Acerca de nosotros</li>
+         <li>Descarga tu Poliza</li>
+         <a href="../../../../assets/PDF/name.pdf" download="ReporteMayo">
+            <li> Términos y condiciones</li>
+         </a>
+      </ul>
+   </div>
+</nav>
+
+<div class=" header--items " *ngIf="showDiv">
+   <div class="container">
+      <p>Mision</p>
+      <p>Vision</p>
+   </div>
+</div>
+<!-- Header Mobile -->
+<div class="list__mobile" *ngIf="showDivMobile">
+   <ul>
+      <li class="active" (click)="showItemsMobile=!showItemsMobile">
+         Acerca de nosotros
+         <i class="fas fa-chevron-down"></i>
+      </li>
+      <div *ngIf="showItemsMobile">
+         <p>Mision</p>
+         <p>Vision</p>
+      </div>
+      <li>Descarga tu Poliza
+         <i class="fas fa-chevron-down"></i>
+      </li>
+      <a href="../../../../assets/PDF/name.pdf" download="ReporteMayo">
+         <li> Términos y condiciones</li>
+      </a>
+   </ul>
+</div>

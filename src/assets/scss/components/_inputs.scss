@@ -1,0 +1,28 @@
+.input, .select{
+  border: none;
+  font-size: .75rem;
+
+}
+.label{
+  font-size: .875rem;
+  color: $gray-5;
+  @include mq-max(md) {
+    display: none;
+  }
+}
+
+.form-group{
+  margin-bottom: 0;
+}
+.mb{
+  margin-bottom: 1.2rem;
+  @include mq-max(md) {
+    margin-bottom: .25rem;
+    padding: 0 2px;
+
+  }
+}
+
+.invalid-feedback{
+  font-size: 60%;
+}

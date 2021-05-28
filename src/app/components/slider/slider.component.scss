@@ -1,0 +1,92 @@
+@import '../../../styles.scss';
+
+ul.slider{
+  position: relative;
+  margin: 3rem 0 3rem;
+  @include  mq-max(sm){
+    z-index: -1;
+  }
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background:$white;
+    img{
+      max-width: 100%;
+    }
+    p{
+      position: absolute;
+      top: 1rem;
+      color: $gray-3;
+      background-color: $white;
+      padding: 2px .5rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+      font-size: .5rem;
+      left: 1rem;
+      @include  mq-max(md){
+        left: 80px;
+      }
+      @include  mq-max(sm){
+        left: 1rem;
+      }
+    }
+}
+
+ul.slider li img{
+  object-fit: cover;
+}
+
+ul.slider li:first-child {
+    opacity: 1; 
+}
+
+ul.slider li:target {
+    opacity: 1; 
+}
+
+.menu{
+  text-align: center;
+  margin: 20px;
+  position: absolute;
+  bottom: 300px;
+  @include  mq-max(md){
+    bottom: 640px;
+    left: 50px;
+  }
+  @media (max-width: 768px) {
+    bottom:430px;
+    left: 50px;
+  }
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+  margin-right: .5rem;
+}
+
+.menu li a{
+  display: inline-block;
+  color: $white;
+  text-decoration: none;
+  background-color: $white;
+  padding: 3px;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  border-radius: 100%;
+  i{
+    color: $gray-4;
+    font-size: 1.2rem;
+  }
+  @media (max-width: 640px) {
+    display: none;
+  }
+}

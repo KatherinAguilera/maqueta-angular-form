@@ -1,0 +1,128 @@
+<div class="form">
+   <app-thanks-notification
+      [formValues]="formValues"
+      (back)="goReturn($event)"
+      *ngIf="notificationForm">
+   </app-thanks-notification>
+
+   <div class="form__content" *ngIf="!notificationForm">
+      <form class="row" [formGroup]="form" (ngSubmit)="sendForm()">
+
+         <div class="col-12 mb">
+            <div class="">
+               <label class="label">
+                  Marca del auto
+               </label>
+               <select 
+                  class="select form-control rounded-0"
+                  formControlName="brandCar"
+                  [class.is-invalid]="brandCarNoValid"
+                  >
+                  <option value="" hidden>Marca del auto</option>
+                  <option value="Nissan">BMW</option>
+                  <option value="Mercedes">Mercedes-Benz</option>
+                  <option value="Audi">Audi</option>
+                  <option value="Lexus">Lexus</option>
+                  <option value="Renault">Renault</option>
+
+               </select>
+               <small class="invalid-feedback" *ngIf="brandCarNoValid">
+                  *Selecciona una marca
+               </small>
+            </div>
+         </div>
+
+         <div class="col-6  mb">
+            <div class="">
+               <label for="inputBran" class="label">
+                  Modelo del auto
+               </label>
+               <select 
+                  id="inputBran" 
+                  class="select form-control rounded-0"
+                  formControlName="modelCar"
+                  [class.is-invalid]="modelCarNoValid">
+                  <option value="" hidden>Modelo del auto</option>
+                  <option value="Exclusive">Clase CLA</option>
+                  <option value="Serie 5">Serie 5</option>
+                  <option value="A4">A4</option>
+                  <option value="RX">RX</option>
+                  <option value="Fluence">Fluence</option>
+               </select>
+               <small class="invalid-feedback" *ngIf="modelCarNoValid">
+                  *Selecciona un modelo
+               </small>
+            </div>
+         </div>
+
+         <div class="col-6 mb">
+            <div class="">
+               <label for="inputBran" class="label">
+                  Año
+               </label>
+               <select 
+                  id="inputBran" 
+                  class="select form-control rounded-0"
+                  formControlName="yearCar"
+                  [class.is-invalid]="yearCarNoValid">
+                  <option value="" selected disabled hidden>Año</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+               </select>
+               <small class="invalid-feedback" *ngIf="yearCarNoValid">
+                  *Selecciona un año
+               </small>
+            </div>
+         </div>
+
+         <div class="col-12 mb">
+            <div class="form-group">
+               <label for="inputBran" class="label">
+                  Email
+               </label>
+               <input 
+                  type="email" 
+                  class="input form-control rounded-0" 
+                  formControlName="email"
+                  placeholder="Email"
+                  [class.is-invalid]="emailNoValid"
+                  >
+                  <small class="invalid-feedback" *ngIf="emailNoValid">
+                     *Ingresa un email válido
+                  </small>
+            </div>
+         </div>
+         <div class="col-12 mb">
+            <div class="form-group">
+               <label for="inputBran" class="label">
+                  Teléfono
+               </label>
+               <input 
+                  type="text" 
+                  class="input form-control rounded-0" 
+                  formControlName="telephone"
+                  placeholder="Teléfono"
+                  pattern=".{10,}"
+                  [class.is-invalid]="telephoneNoValid"
+                  >
+                  <small class="invalid-feedback" *ngIf="telephoneNoValid">
+                     *Ingresa un telefono válido
+                  </small>
+            </div>
+         </div>
+
+         <div class="mt-2 form__button">
+            <button 
+               type="submit" 
+               class="btn btn-block">
+               Cotizar ahora
+            </button>
+         </div>
+      </form>
+   </div>
+
+
+
+</div>

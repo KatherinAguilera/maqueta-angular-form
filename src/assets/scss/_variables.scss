@@ -1,0 +1,24 @@
+// Fuente
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+$font-family: 'Open Sans', sans-serif;
+
+// 1. Colors
+$primary: #36aadd;
+$secondary:#bbd550;
+$gray-1: #eeeeee;
+$gray-2: #e6e6e6;
+$gray-3: #4d4d4d;
+$gray-4: #212121;
+$gray-5: #666666;
+$gray-6: #7c7c7c;
+$black: #000000;
+$white: #ffffff;
+
+
+// 2. Media Query
+$breakpoints: (
+   sm  : 660px,
+   md  : 1025px,
+   lg  : 1280px,
+   xl  : 1920px, 
+);

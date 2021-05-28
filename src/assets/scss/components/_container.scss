@@ -1,0 +1,41 @@
+.container{
+  max-width: 1240px;
+
+  @media (max-width: 1240px) {
+    max-width: 1110px;
+  }
+  @include e(title){
+    text-align: center;
+    h1{
+      margin-top: 2rem;
+      color: $primary;
+      font-size: 2rem;
+      margin-bottom: .5rem;
+      font-weight: bold;
+    }
+    h3{
+      font-size: 1rem;
+      color: $gray-5;
+    }
+  }
+  @include mq-max(md){
+    h1{
+      margin-top: 1rem;
+    }
+  }
+  @include e(main){
+    display: grid;
+    grid-template-columns: 70% 30%;
+    @include mq-max(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.main{
+  padding: 0;
+  margin-bottom: 6rem;
+  @include mq-max(sm) {
+    margin-bottom: 1rem;
+  }
+}

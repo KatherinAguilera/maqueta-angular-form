@@ -1,0 +1,29 @@
+
+
+.flex{
+   display: flex;
+   align-items: center;
+   &__jc-center{
+      justify-content: center;
+   }
+}
+
+
+.main {
+   @include e(body){
+      background: $white; 
+      @include mq-min(md) {
+         &::after {
+            content: "";
+            background: $primary;
+            position: absolute;
+            top: 13.438rem;
+            left: 0;
+            right: 0;
+            height: 69px;
+            z-index: -1;
+         }
+      }
+   }
+
+}

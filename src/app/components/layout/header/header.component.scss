@@ -1,0 +1,190 @@
+@import "../../../../styles.scss";
+
+.navbar {
+   background: $gray-3;
+   position: sticky;
+   top: 0;
+   z-index: 4;
+   @include  mq-max(md){
+      display: grid;
+      grid-template-columns: 10% 90%;
+   }
+}
+
+.header{
+   padding: .75rem;
+   figure{
+      img{
+         width: 250px
+      }
+   }
+   ul{
+      width: 60%;
+      @extend .flex;
+      justify-content: space-around;
+      li{
+         color: $gray-1;
+         font-size: 1rem;
+      }
+   }
+   @include  mq-max(md){
+      justify-content: center;
+      padding: .25rem;
+      figure{
+         width: 100%;
+         text-align: center;
+         img{
+            width: 150px
+         }
+      }
+      ul{
+         display: none;
+      }
+   }
+   @include m(items){
+      position: absolute;
+      width: 100%;
+      div{
+         font-size: .875rem;
+         font-weight: 100;
+         @extend .flex;
+         & p:nth-child(1){
+            margin-right: 4rem;
+         }
+      }
+      color: $gray-1;
+      padding: .5rem 0;
+      background-color: $gray-4;
+      @include m(active){
+         &:hover, &:active{
+            color: $white;
+            cursor: pointer; 
+         }
+      }
+   }
+
+   @include e (mobile){
+      @include  mq-min(md){
+         display: none;
+         }
+         input#open-close {
+            visibility:hidden;
+            position: absolute;
+            top: -9999px;
+      }
+      .toggle-button {
+         display:block;
+         width:50px;
+         height:50px;
+         position:relative;
+         cursor: pointer;
+         box-sizing: border-box;
+         padding-top: .5rem;
+
+         &::before, &::after{
+            position:absolute;
+            display:block;
+            content:" ";
+            width: calc(100% / 2);
+            box-sizing: border-box;
+            left: calc(100% / 4);
+            transition: all 0.2s ease-out;
+         }
+
+         &::before{
+            top: calc(100% / 3);
+            height:calc(100% / 5.2);
+            border-top:3px solid $white;
+            border-bottom:3px solid $white;
+            background-color: transparent;
+         }
+         &::after{
+            height:3px;
+            background-color:$white;
+            bottom:calc(100% / 3);
+         }
+      }
+
+      input#open-close:checked + .toggle-button:before,
+      input#open-close:checked + .toggle-button:after {
+            top:calc(100% / 2);
+            height:3px;
+            border-bottom:0;
+      }
+
+      input#open-close:checked + .toggle-button:before {
+            transform: rotate(45deg); 
+      }
+
+      input#open-close:checked + .toggle-button:after {
+            transform: rotate(-45deg);
+      }
+
+      .open, .close {
+            position:absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            text-indent: -9999px;
+      }
+      .open {
+            display:block;
+      }
+
+      .close {
+            display:none;
+      }
+
+      input#open-close:checked + .toggle-button .open {
+            display:none;
+      }
+
+      input#open-close:checked + .toggle-button .close {
+            display:block;
+      }
+   }
+}
+
+.list{
+   @include e(mobile){
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      ul{
+         background-color: $gray-4;
+         padding: 1.5rem;
+         li{
+            color: $white;
+            font-size: 1.125rem;
+            color: $gray-2;
+            padding-bottom: .5rem;
+            @extend .flex;
+            justify-content: space-between;
+            i{
+               color: $gray-2;
+               transition: .5s;
+               &:active, &:hover{
+                  transform: rotate(180deg);
+               }
+            }
+         }
+         p{
+            font-size: .875rem;
+            font-weight: 100;
+            color: $gray-2;
+            list-style-type: square;
+            padding: 0 0 .5rem .5rem;
+         }
+         .active{
+            &:active, &:hover{
+               cursor: pointer;
+            }
+         }
+      }
+      @include mq-min(md){
+         display: none;
+      }
+   }
+
+}

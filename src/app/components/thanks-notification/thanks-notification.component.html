@@ -1,0 +1,33 @@
+<div class="notification">
+   <div class="notification__title">
+      <h2>Te notificamos que los datos han sido enviados</h2>
+   </div>
+   <ul class="notification__content list-group m-4">
+      <li class="list-group-item">
+         <strong>Marca:</strong> {{ formValues[0] }}
+      </li>
+      <li class="list-group-item">
+         <strong>Modelo:</strong> {{ formValues[1] }}
+      </li>
+      <li class="list-group-item">
+         <strong>Año:</strong> {{ formValues[2] }}
+      </li>
+      <li class="list-group-item">
+         <strong>Email:</strong> {{ formValues[3] }}
+      </li>
+      <li class="list-group-item">
+         <strong>Teléfono:</strong> {{ formValues[4] }}
+      </li>
+   </ul>
+
+   <div class="notification__button col-sm-12 mb-3 mt-sm-4">
+      <button
+         (click)="goReturn(true)"
+         type="button"
+         class="btn btn-block">
+         <i class="fas fa-chevron-left"></i>
+         Vuelve a cotizar!
+      </button>
+   </div>
+   
+</div>

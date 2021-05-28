@@ -1,0 +1,59 @@
+@import "../../../styles";
+
+.notification{
+  @include mq-max(sm) {
+    padding: .75rem;
+  }
+
+  @include e(title){
+    font-size: 1.2rem;
+    color: $white;
+    text-align: center;
+    font-weight: 700;
+    background-color: $primary;
+    margin: .5rem;
+    padding: .5rem;
+    border-top-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    @include mq-max(md) {
+      display: none
+    }
+    @include mq-max(sm) {
+      display: block
+    }
+  }
+  @include e(button){
+    @extend .flex;
+    justify-content: center;
+    width: 100%;
+    button{
+        background: $primary; 
+        color: $white; 
+        border-bottom: 3px solid rgba(0,0,0,0.21);
+        font-weight: 500;
+        padding: .5rem;
+        font-size: 1rem;
+        width: 200px;
+        font-weight: bold;
+        &:hover {
+            background: $secondary; 
+            color: $white; 
+        }
+        @include mq-max(md) {
+            width: 100%;
+        }
+        i{
+          margin-right: 1rem;
+        }
+    }
+  }
+  @include e(content){
+    font-size: .75rem;
+    li{
+      background-color: $white;
+      text-align: center;
+      border: 2px solid $secondary;
+    }
+
+  }
+}
